@@ -1,8 +1,8 @@
 import torch
 import numpy as np
 import torch.nn.functional as F
-from qcqp_layers import *
-from utils import sixdim_to_rotmat
+from brl.qcqp_layers import *
+from brl.utils import sixdim_to_rotmat
 import torchvision
 
 

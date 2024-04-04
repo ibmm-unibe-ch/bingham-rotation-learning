@@ -21,7 +21,7 @@ Standard pip/conda stuff:
 `numpy, scipy, torch, torchvision, argparse, matplotlib`
 
 Slightly less standard stuff:
-`tqdm, tensorboardx`
+`tqdm, tensorboard`
 
 Finally we rely on our lab's Lie group library, `liegroups` (with bindings for `pytorch`/`numpy`), available [here](https://github.com/utiasSTARS/liegroups) (unfortunately not yet on pip). You can install it via:
 

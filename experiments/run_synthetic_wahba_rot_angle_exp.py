@@ -3,7 +3,7 @@ import numpy as np
 import sys
 sys.path.insert(0,'..')
 from networks import *
-from losses import *
+from brl.losses import *
 from helpers_sim import *
 from datetime import datetime
 import argparse

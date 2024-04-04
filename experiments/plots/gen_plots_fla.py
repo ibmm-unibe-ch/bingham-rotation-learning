@@ -11,13 +11,13 @@ from matplotlib.colors import to_rgba
 from cv2 import VideoWriter, VideoWriter_fourcc
 import sys
 sys.path.insert(0,'../../')
-from quaternions import *
+from brl.quaternions import *
 from networks import *
 from helpers_train_test import *
 from liegroups.numpy import SO3
 import torch
 from datetime import datetime
-from qcqp_layers import *
+from brl.qcqp_layers import *
 from torch.utils.data import Dataset, DataLoader
 from loaders import FLADataset
 from metrics import *

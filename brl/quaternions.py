@@ -1,7 +1,9 @@
-import torch
-import numpy as np
-import utils
 import math
+
+import numpy as np
+import torch
+
+import brl.utils as utils
 
 #NUMPY
 ##########
@@ -107,12 +109,12 @@ def quat_to_rotmat(quat, ordering='xyzw'):
         print("Warning: Some quaternions not unit length ... normalizing.")
         quat = quat/quat.norm(p=2, dim=1, keepdim=True)
 
-    if ordering is 'xyzw':
+    if ordering == 'xyzw':
         qx = quat[:, 0]
         qy = quat[:, 1]
         qz = quat[:, 2]
         qw = quat[:, 3]
-    elif ordering is 'wxyz':
+    elif ordering == 'wxyz':
         qw = quat[:, 0]
         qx = quat[:, 1]
         qy = quat[:, 2]

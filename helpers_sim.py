@@ -3,11 +3,11 @@ import torch
 from liegroups.numpy import SO3
 from liegroups.torch import SO3 as SO3_torch
 from numpy.linalg import norm
-from quaternions import *
-from losses import *
-from utils import *
-from qcqp_layers import QuadQuatFastSolver, convert_A_to_Avec
-from tensorboardX import SummaryWriter
+from brl.quaternions import *
+from brl.losses import *
+from brl.utils import *
+from brl.qcqp_layers import QuadQuatFastSolver, convert_A_to_Avec
+from tensorboard import SummaryWriter
 import time
 import tqdm
 
@@ -92,7 +92,7 @@ def train_test_model(args, train_data, test_data, model, loss_fn, rotmat_targets
     for e in range(args.epochs):
         start_time = time.time()
 
-        if args.dataset is not 'static':
+        if not args.dataset == 'static':
             beachball = (args.dataset == 'dynamic_beachball')
             beachball_factors = args.beachball_sigma_factors
             train_data, test_data = create_experimental_data_fast(args.N_train, args.N_test, args.matches_per_sample, max_rotation_angle=args.max_rotation_angle, sigma=args.sim_sigma, beachball=beachball, beachball_factors=beachball_factors, device=device, dtype=tensor_type)
@@ -236,7 +236,7 @@ def train_test_models_with_plots(args, train_data, test_data, models, loss_fns, 
         for e in range(args.epochs):
             start_time = time.time()
 
-            if args.dataset is not 'static':
+            if not args.dataset == 'static':
                 beachball = (args.dataset == 'dynamic_beachball')
                 beachball_factors = args.beachball_sigma_factors
                 train_data, test_data = create_experimental_data_fast(args.N_train, args.N_test, args.matches_per_sample,

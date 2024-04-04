@@ -1,6 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
-from utils import normalized
+from brl.utils import normalized
 from helpers_sim import build_A, gen_sim_data
 # from gen_plots import _plot_curve_with_bounds # Required cv2
 

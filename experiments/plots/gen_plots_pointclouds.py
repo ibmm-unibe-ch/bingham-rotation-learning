@@ -149,7 +149,7 @@ def plot_learning_rate_experiment(data_path, custom_legend=None):
     #print(args)
     train_stats_list = checkpoint['train_stats_list']
     test_stats_list = checkpoint['test_stats_list']
-    if custom_legend is not None:
+    if not custom_legend == None:
         names = custom_legend
     else:
         names = checkpoint['named_approaches']

@@ -1,6 +1,6 @@
+import time
 import numpy as np
 import scipy as sp
-import time
 import torch
 
 def normalize_Avec(A_vec):
@@ -106,7 +106,7 @@ def solve_wahba_fast(A, compute_gap=False):
     """
     #start = time.time()
     # Returns (b,n) and (b,n,n) tensors
-    nus, qs = torch.symeig(A, eigenvectors=True)
+    nus, qs = torch.linalg.eigh(A)
     nu_min, nu_argmin = torch.min(nus, 1)# , keepdim=False, out=None)
     q_opt = qs[torch.arange(A.shape[0]), :, nu_argmin]
     q_opt = q_opt*(torch.sign(q_opt[:, 3]).unsqueeze(1))

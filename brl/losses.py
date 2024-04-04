@@ -1,6 +1,7 @@
 import torch
-from quaternions import *
-from utils import *
+
+from brl.quaternions import *
+from brl.utils import *
 
 ## Quaternions
 #Computes q^T A q

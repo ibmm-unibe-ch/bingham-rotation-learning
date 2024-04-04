@@ -2,8 +2,8 @@ import torch
 from torch.autograd import gradcheck
 import numpy as np
 from liegroups.numpy import SO3
-from qcqp_layers import *
-from quaternions import *
+from brl.qcqp_layers import *
+from brl.quaternions import *
 from helpers_sim import *
 import os
 from sdp_layers import RotMatSDPSolver

@@ -4,7 +4,7 @@ from datetime import datetime
 import numpy as np
 from loaders import KITTIVODatasetPreTransformed
 from networks import *
-from losses import *
+from brl.losses import *
 from torch.utils.data import Dataset, DataLoader
 import tqdm
 from helpers_train_test import train_test_model

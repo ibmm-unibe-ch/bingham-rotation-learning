@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0,'..')
 from loaders import KITTIVODatasetPreTransformed
 from networks import *
-from losses import *
+from brl.losses import *
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import tqdm

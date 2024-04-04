@@ -2,14 +2,14 @@ import torch
 import time, argparse
 from datetime import datetime
 import numpy as np
-from tensorboardX import SummaryWriter
+from tensorboard import SummaryWriter
 from loaders import PointNetDataset, pointnet_collate
 from networks import *
-from losses import *
+from brl.losses import *
 from torch.utils.data import Dataset, DataLoader
-from quaternions import *
+from brl.quaternions import *
 import tqdm
-from utils import loguniform
+from brl.utils import loguniform
 from helpers_train_test import train_test_model
 
 def main():

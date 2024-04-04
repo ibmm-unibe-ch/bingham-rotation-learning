@@ -2,8 +2,8 @@ import torch
 import time, argparse
 from datetime import datetime
 import numpy as np
-from tensorboardX import SummaryWriter
-from quaternions import *
+from tensorboard import SummaryWriter
+from brl.quaternions import *
 import tqdm
 
 #Generic training function

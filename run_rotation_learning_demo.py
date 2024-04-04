@@ -1,9 +1,12 @@
-import torch
-import numpy as np
-from networks import *
-from losses import *
-from helpers_sim import *
 import argparse
+
+import numpy as np
+import torch
+
+from brl.losses import *
+
+from networks import *
+from helpers_sim import *
 
 
 def main():

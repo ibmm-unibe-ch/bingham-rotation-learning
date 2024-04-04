@@ -2,13 +2,13 @@ import numpy as np
 import torch
 import sys
 sys.path.insert(0,'..')
-from qcqp_layers import QuadQuatFastSolver
-from losses import quat_squared_loss, rotmat_frob_squared_norm_loss
+from brl.qcqp_layers import QuadQuatFastSolver
+from brl.losses import quat_squared_loss, rotmat_frob_squared_norm_loss
 from helpers_sim import create_experimental_data_fast
 from networks import QuatNet, PointNet, PointNetInspect
 from gen_uncertainty_plots import sum_bingham_dispersion_coeff, first_eig_gap
-from quaternions import *
-from utils import sixdim_to_rotmat
+from brl.quaternions import *
+from brl.utils import sixdim_to_rotmat
 
 
 

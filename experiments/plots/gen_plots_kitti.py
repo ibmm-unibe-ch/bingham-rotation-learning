@@ -15,12 +15,12 @@ import matplotlib.ticker as mtick
 from matplotlib.colors import to_rgba
 import sys
 sys.path.insert(0,'../..')
-from quaternions import *
+from brl.quaternions import *
 from networks import *
 from helpers_train_test import *
 from liegroups.numpy import SO3
 from datetime import datetime
-from qcqp_layers import *
+from brl.qcqp_layers import *
 from torch.utils.data import Dataset, DataLoader
 from loaders import KITTIVODatasetPreTransformed
 from metrics import *

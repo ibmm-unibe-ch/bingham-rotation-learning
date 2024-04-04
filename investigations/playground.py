@@ -1,7 +1,7 @@
 from helpers_sim import *
 import numpy as np
 from liegroups.numpy import *
-from utils import *
+from brl.utils import *
 from rotation_matrix_sdp import *
 
 def check_eigs():

@@ -6,7 +6,7 @@ import torchvision
 import os.path as osp
 from PIL import Image
 import os
-from quaternions import rotmat_to_quat, quat_to_rotmat, rotmat_angle_diff
+from brl.quaternions import rotmat_to_quat, quat_to_rotmat, rotmat_angle_diff
 from liegroups.torch import SO3
 import pickle
 import cv2
@@ -63,7 +63,7 @@ class KITTIVODatasetPreTransformed(Dataset):
         else:
             raise ValueError('run_type must be set to `train`, or `test`. ')
 
-        if use_only_seq is not None:
+        if not use_only_seq == None:
             self.pose_indices = [self.pose_indices[i] for i in range(len(self.seqs))
                                  if self.seqs[i] ==  use_only_seq]
             self.T_21_gt = [torch.from_numpy(self.T_21_gt[i]).float() for i in range(len(self.seqs))
@@ -118,7 +118,7 @@ class KITTIVODatasetPreTransformed(Dataset):
         else:
             #Should we transform?
             transform_img_flag = False
-            if self.transform_img is not None:
+            if not self.transform_img == None:
                 if self.transform_second_half_only:
                     if idx > len(self.T_21_gt)/2:
                         transform_img_flag = True
@@ -302,7 +302,7 @@ class SevenScenesData(Dataset):
         pose = self.poses[index].view(4,4) #Poses are camera to world
         C_ci_w = pose[:3,:3].transpose(0,1) #World to camera
         
-        if self.first_image is not None:
+        if not self.first_image == None:
             return (self.first_image, img), rotmat_to_quat(C_ci_w.mm(self.C_w_c0))
         else:
             return img, rotmat_to_quat(C_ci_w)
@@ -345,7 +345,7 @@ class FLADataset(tud.Dataset):
         with open(os.path.join(self.image_dir, "data.csv"), "r") as ff:
             lines = ff.readlines()
             lines = [line.rstrip() for line in lines] # Strip newlines.
-            lines = [line for line in lines if line[0] is not "#"] # Strip comments.
+            lines = [line for line in lines if not line[0] == "#"] # Strip comments.
 
             for line in lines:
                 tokens = line.split(",")
@@ -360,7 +360,7 @@ class FLADataset(tud.Dataset):
         with open(os.path.join(self.pose_dir, "data.csv"), "r") as ff:
             lines = ff.readlines()
             lines = [line.rstrip() for line in lines] # Strip newlines.
-            lines = [line for line in lines if line[0] is not "#"] # Strip comments.
+            lines = [line for line in lines if not line[0] == "#"] # Strip comments.
 
             for line in lines:
                 tokens = line.split(",")
@@ -381,7 +381,7 @@ class FLADataset(tud.Dataset):
         with open(dataset_file, "r") as ff:
             lines = ff.readlines()
             lines = [line.rstrip() for line in lines] # Strip newlines.
-            lines = [line for line in lines if line[0] is not "#"] # Strip comments.
+            lines = [line for line in lines if not line[0] == "#"] # Strip comments.
             for line in lines:
                 tokens = line.split(",")
                 self.image_pair_ids.append([np.uint64(tokens[0]), np.uint64(tokens[1])])

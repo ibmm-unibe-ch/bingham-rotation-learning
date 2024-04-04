@@ -1,11 +1,11 @@
 import torch
 import numpy as np
 from networks import *
-from quaternions import *
+from brl.quaternions import *
 from helpers_sim import *
 from datetime import datetime
 import argparse
-from utils import loguniform
+from brl.utils import loguniform
 
 def main():
     parser = argparse.ArgumentParser(description='Synthetic Wahba arguments.')

@@ -2,10 +2,10 @@ import cvxpy as cp
 import torch
 from cvxpylayers.torch import CvxpyLayer
 from rotation_matrix_sdp import rotation_matrix_constraints
-from qcqp_layers import *
+from brl.qcqp_layers import *
 import time
-from utils import allclose
-from quaternions import *
+from brl.utils import allclose
+from brl.quaternions import *
 
 def x_from_xxT(xxT):
     """

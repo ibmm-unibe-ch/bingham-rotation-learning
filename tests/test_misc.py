@@ -1,11 +1,11 @@
-from quaternions import *
+from brl.quaternions import *
 import torch
-from utils import *
+from brl.utils import *
 import numpy as np
 from liegroups.torch import SO3
 from sdp_layers import x_from_xxT
 import math
-from losses import quat_chordal_squared_loss, rotmat_frob_squared_norm_loss
+from brl.losses import quat_chordal_squared_loss, rotmat_frob_squared_norm_loss
 
 def test_180_quat():
     a = torch.randn(25,3).to(torch.float64)

@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from qcqp_layers import compute_rotation_QCQP_grad, compute_rotation_QCQP_grad_fast
+from brl.qcqp_layers import compute_rotation_QCQP_grad, compute_rotation_QCQP_grad_fast
 def test_einsums():
     b = 5
     m = 2

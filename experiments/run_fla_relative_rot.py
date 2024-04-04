@@ -4,7 +4,7 @@ from datetime import datetime
 import numpy as np
 from loaders import FLADataset
 from networks import *
-from losses import *
+from brl.losses import *
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import tqdm

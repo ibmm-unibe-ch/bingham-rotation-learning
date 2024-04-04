@@ -1,0 +1,12 @@
+README.md
+setup.py
+brl/losses.py
+brl/qcqp_layers.py
+brl/quaternions.py
+brl/utils.py
+brl.egg-info/PKG-INFO
+brl.egg-info/SOURCES.txt
+brl.egg-info/dependency_links.txt
+brl.egg-info/top_level.txt
+tests/test_misc.py
+tests/test_solvers.py
